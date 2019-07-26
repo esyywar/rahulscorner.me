@@ -1,0 +1,139 @@
+﻿/*CSS Stylesheet for Rahul's Blog*/
+/*Author: Rahul Eswar*/
+
+html {font-size: 62.5%}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+#navigation-bar-full {
+    overflow: hidden;
+    background: transparent;
+    width: 100%;
+    padding: 3.2rem 0;
+    position: fixed;
+    top: 0;
+    transition: 300ms;
+    z-index: 1;
+}
+
+/*Basic right aligned nav styling*/
+#nav-links {
+    padding-right: 2.5rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    text-align: right;
+}
+
+    #nav-links li {
+        font-family: 'Poppins', sans-serif;
+        display: inline-block;
+    }
+
+.nav-item {
+    padding: 7px 23px;
+    color: #ffffff;   /*#e9e8e8;*/
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 30ms;
+    transition: font-size 100ms;
+}
+    /*Additional class for nav-item hover effect*/
+    .nav-item:hover {
+        text-decoration: none;
+        font-size: 2.3rem;
+        color: #ffd800;
+        letter-spacing: 2px;
+    }
+
+
+/*Custom styling for tablet and mobile platforms*/
+@media only screen and (max-width: 900px) {
+    #navigation-bar-full {
+        padding: 10px 0;
+        background-color: #000000;
+    }
+        #nav-links {
+            height: 100%;
+            width: 0;
+            overflow-x: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0;
+            padding-top: 70px;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: width 250ms ease-in;
+        }
+            #nav-links li {
+                display: block;
+                text-align: center;
+            }
+            .nav-item {
+                font-size: 2.5rem;
+                padding-bottom: 30px;
+                text-transform: uppercase;
+                opacity: 0;   /*For slide out animation enabled in javascipt*/
+                display: block;
+            }
+                .nav-item:hover {
+                    font-size: 2.8rem;
+                    color: #ffd800;
+                    letter-spacing: 3px;
+                }
+
+    /*Burger style (only appears in medium and smaller screens)*/
+    #burger {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        float: left;
+        padding: 2px 2px;
+        margin-left: 15px;
+        border: 2px solid white;
+        border-radius: 4px;
+        z-index: 2;
+    }
+        #burger div {
+            width: 25px;
+            height: 3px;
+            margin: 4px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+    /*Animation for nav items to fade in*/
+    @keyframes navItemsAppear {
+        from {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /*Animation effect for burger to close button*/
+    .burgerChange {
+        background-color: red;
+    }
+    .burgerChange .line1 {
+        transform: rotate(-45deg) translate(-4px,6px);
+    }
+    .burgerChange .line2 {
+        opacity: 0;
+    }
+    .burgerChange .line3 {
+        transform: rotate(45deg) translate(-4px, -6px);
+    }
+}

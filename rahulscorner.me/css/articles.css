@@ -1,0 +1,126 @@
+﻿/*CSS Stylesheet for Rahul's Blog*/
+/*For library page*/
+/*Author: Rahul Eswar*/
+
+:root {
+    font-size: 62.5% /*So that 1em = 10px*/
+}
+
+/*Resetting browser defaults*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    font-size: 100%;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/*Formatting page layout for footer*/
+.content-flex {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    position: relative;
+}
+
+/*Background header photo*/
+.article-header {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../blog-posts/images/sylvia-plath.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: center;
+}
+.title {
+    font-family: 'Noto Serif', serif;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    top: 70%;
+}
+    .title h1 {
+        font-size: 60px;
+    }
+
+/*Blog article text stylings for readability*/
+.drop-cap {
+    color: #000000;
+    float: left;
+    font-family: Georgia;
+    font-size: 70px;
+    font-style: normal;
+    text-shadow: #8d8c8c 2px 2px;
+    margin-bottom: 10px;
+}
+.main-article {
+    padding: 5rem 15rem;
+    font-family: Georgia;
+    color: #000000;
+    font-size: 18px;
+    line-height: 30px;
+
+    /*For easily putting images alongside...*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+    .article-para, .emp-quote {
+        display: inline-block;
+    }
+    .article-para {
+        padding-bottom: 10px;
+        color: #000000;
+    }
+    .emp-quote {
+        text-align: center;
+        margin: auto;
+        padding: 30px 0;
+        font-style: italic;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+/*Column width class controls*/
+.full {
+    width: 100%;
+}
+.three-quarter {
+    width: 75%;
+}
+.half {
+    width: 50%;
+}
+.quarter {
+    width: 25%;
+}
+
+/*Custom styling for large screens*/
+@media only screen and (max-width: 992px) {
+    .main-article {
+        padding: 5rem 7rem;
+    }
+}
+
+/*Custom styling for medium screens (tablets, phablets)*/
+@media only screen and (max-width: 768px) {
+    .main-article {
+        padding: 5rem;
+    }
+    .full, .three-quarter, .half, .quarter {
+        width: 100%;
+    }
+}
+
+/*Custom styling for mobiles*/
+@media only screen and (max-width: 576px) {
+    .title {
+        top: 50%;
+    }
+    .main-article {
+        padding: 5rem 8px;
+    }
+}
+

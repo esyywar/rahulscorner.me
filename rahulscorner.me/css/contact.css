@@ -1,0 +1,141 @@
+﻿/*CSS Stylesheet for Rahul's Blog*/
+/*For contact us page*/
+/*Author: Rahul Eswar*/
+
+html {font-size: 62.5%}
+
+/*Resetting defaults*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    font-size: 100%;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/*Formatting page layout for footer*/
+.content-flex {
+    display: flex;
+    flex-direction: column;
+    background-image: url("../images/tree-purple-sky.jpeg");
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.contactForm {
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    width: 70%;
+    max-width: 850px;
+    max-height: 450px;
+    background-color: #aeabab; /*Backup for browsers not supporting RGBA*/
+    background-color: rgba(0,0,0,0.8);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 4px 4px 4px #000000;
+}
+.message textarea {
+    font-family: 'Roboto', sans-serif;
+    min-height: 10rem;
+}
+
+/*Inside contact form fields styling*/
+.inputFields, .message {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4%;
+    font-size: 2rem;
+}
+.inputFields {
+    width: 35%;
+}
+.message {
+    width: 65%;
+}
+.inputFields .inputBox, .message textarea {
+    max-height: 100%;
+    max-width: 100%;
+    color: #ffffff;
+    margin: 5px 0;
+    border: 0;
+    background: transparent;
+    border-bottom: 4px solid #4800ff;
+}
+
+/*Submit button*/
+#submitBtn {
+    width: 50%;
+    height: 4rem;
+    display: inline-block;
+    align-self: center;
+    margin-top: 13px;
+    cursor: pointer;
+    vertical-align: middle;
+    background-color: #ffd800;
+    border-radius: 4px;
+    border: 3px solid #0b6817;
+}
+#submitBtn:hover {
+    background-color: #1ede37;
+}
+
+/*Submit button animation feature*/
+#submitBtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+    #submitBtn span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+#submitBtn:hover span {
+    padding-right: 25px;
+}
+
+    #submitBtn:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+/*Custom styling for medium screens (tablets, phablets)*/
+@media only screen and (max-width: 768px) {
+    .contactForm{
+        width: 90%;
+    }
+    .inputFields, .message {
+        font-size: 13px;
+    }
+
+}
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+
+
+

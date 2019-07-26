@@ -1,0 +1,205 @@
+/*CSS Stylesheet for Rahul's Blog*/
+/*Author: Rahul Eswar*/
+
+html {font-size: 62.5%}  /*So that 1rem = 10px*/
+
+/*Resetting defaults*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    font-size: 100%;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/*Enclosing all classes in flexbox for responsiveness*/
+.content-flex {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/*Welcome header image and text*/
+#head-image {
+    width: 100%;
+    height: 70rem;
+    background-image: url(../images/my-tor-pic-dark.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+    #head-image p {
+        color: #ffffff;
+        width: 100%;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 5.5rem;
+        font-weight: 400;
+        text-shadow: 8px 8px 8px #000000;
+        position: relative;
+        top: 450px;
+        background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+/*Introduction section*/
+.introduction-section {
+    padding: 3rem 0px;
+    background-color: #ffffff;
+    width: 100%;
+
+    /*To fit intro-text and preview card side by side*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+    .introduction-text {
+        width: 70%;
+    }
+    .featured-post {
+        width: 30%;
+    }
+    /*Introduction section text styling*/
+    .intro-header {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 4rem;
+        font-family: "Arial Black", Gadget, sans-serif;
+        color: #000000;
+        padding-top: 2px;
+    }
+    .intro-title-underline {
+        border: 3px solid #000000;
+        border-radius: 4px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .intro-body {
+        padding: 20px;
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 2.3rem;
+        line-height: 3rem;
+        color: #000000;
+    }
+
+/*Featured post section stlying*/
+.featured-post {
+    text-align: center;
+    margin: auto;
+}
+    .post-card {
+        display: inline-block;
+        width: 28rem;
+        height: 30rem;
+        border: 4px solid black;
+        border-radius: 8px;
+        overflow: hidden;
+        transform: skewX(-5deg);
+        cursor: pointer;
+        transition: box-shadow 300ms;
+        transition: transform 500ms;
+    }
+        .post-card h1, .post-card h2, .post-card img {
+            padding-top: 12px;
+        }
+        .preview-text {
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+        }
+            .preview-text .date {
+                text-transform: uppercase;
+                color: #6c6c6c;
+                font-size: 3em;
+            }
+            .preview-text .title {
+                text-decoration-line: underline;
+                color: #000000;
+            }
+        .preview-image {
+            height: 65%;
+        }
+
+/*Hover effect for featured post*/
+.post-card:hover {
+    box-shadow: 5px 5px #808080;
+    transform: skewX(0deg);
+}
+
+/*Break point to make intro section 2 seperate columns*/
+@media only screen and (max-width: 1000px) {
+    .introduction-text, .featured-post {
+        width: 100%;
+    }
+}
+
+/*Custom stylings for large screen (tablets)*/
+@media only screen and (max-width: 992px) {
+    #head-image {
+        height: 50rem;
+    }
+        #head-image p {
+            font-size: 4rem;
+            font-weight: 400;
+            text-shadow: 6px 6px 6px #000000;
+            top: 360px;
+        }
+
+    .intro-header {
+        font-size: 3rem;
+    }
+    .intro-title-underline {
+        border: 2px solid #000000;
+        border-radius: 2px;
+    }
+    .intro-body {
+        font-size: 2.1rem;
+    }
+}
+
+/*Custom styling for medium screens (tablets, phablets)*/
+@media only screen and (max-width: 768px) {
+    #head-image p {
+        font-size: 3em;
+        font-weight: 400;
+        text-shadow: 3px 3px 3px #000000;
+    }
+
+    .intro-header {
+        font-size: 3em;
+    }
+    .intro-title-underline {
+        border: 2px solid #000000;
+        border-radius: 2px;
+        width: 80%;
+    }
+    .intro-body {
+        font-size: 2em;
+    }
+}
+
+/*Custom styling for mobile phones*/
+@media only screen and (max-width: 576px) {
+    #head-image {
+        background-position-x: 40%;
+    }
+    #head-image p {
+        font-size: 3rem;
+        font-weight: 400;
+        text-shadow: 3px 3px 3px #000000;
+    }
+
+    .intro-header {
+        font-size: 2rem;
+    }
+    .intro-title-underline {
+        border: 1px solid #000000;
+        border-radius: 1px;
+        width: 80%;
+    }
+    .intro-body {
+        font-size: 2rem;
+    }
+}

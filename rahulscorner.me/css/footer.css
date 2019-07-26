@@ -1,0 +1,57 @@
+﻿/*CSS styling for blog footer*/
+/*Author: Rahul Eswar*/
+
+html {font-size: 62.5%}
+
+/*For all screens*/
+#footer {
+    width: 100%;
+    background-color: #000000;
+    color: #c3b5b5;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    max-height: 7rem;
+}
+
+    #footer h2 {
+        font-size: 15px;
+    }
+
+.social-links, .thanks-msg, .author-sign {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+}
+
+.twitter-bird img {
+    filter: brightness(80%);
+    height: 45px;
+    width: 45px;
+}
+
+.author-sign h2 {
+    float: right;
+    padding-right: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+    #footer h2 {
+        font-size: 12px;
+    }
+    .twitter-bird img {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #footer h2 {
+        font-size: 10px;
+    }
+    .twitter-bird img {
+        height: 35px;
+        width: 35px;
+    }
+}
